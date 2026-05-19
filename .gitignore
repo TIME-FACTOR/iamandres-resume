@@ -1,0 +1,12 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+
+# Node modules (if you add build tools later)
+node_modules/
+dist/
+.wrangler/
