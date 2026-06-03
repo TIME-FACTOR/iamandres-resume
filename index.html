@@ -3,39 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1">
-  <title>Andres Alvarez - AI Implementation Consultant</title>
-  <meta name="description" content="AI Implementation Consultant, Builder, and Bilingual professional. Specializing in AI engineering, training, and full-stack deployment.">
+  <title>Andres Alvarez · Builder &amp; Technologist</title>
+  <meta name="description" content="Portfolio of Andres Alvarez — AI products, full-stack builds, algorithmic and prediction-market trading systems, and creative work. Bilingual English and Spanish.">
+  <script>
+    (function () {
+      var hour = new Date().getHours();
+      var isNightTime = hour >= 19 || hour < 7;
+      var saved = localStorage.getItem('theme');
+      var manualOverride = localStorage.getItem('theme-manual');
+      var theme;
+      if (manualOverride === 'true' && (saved === 'light' || saved === 'dark')) {
+        theme = saved;
+      } else {
+        theme = isNightTime ? 'dark' : 'light';
+      }
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(theme);
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark">
+<body>
 <div class="app">
 
 <!-- HEADER -->
 <header class="app-header">
   <div class="header-left">
-    <a class="active" href="#top">
-      <svg width="29" height="27" viewBox="0 0 29 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
-        <path d="M14 23.96C21.73 23.96 28 24.64 28 25.46C28 26.29 21.73 26.96 14 26.96C6.27 26.96 0 26.29 0 25.46C0 24.64 6.27 23.96 14 23.96ZM15 19.96C22.73 19.96 29 20.64 29 21.46C29 22.29 22.73 22.96 15 22.96C7.27 22.96 1 22.29 1 21.46C1 20.64 7.27 19.96 15 19.96ZM12.51 18.92C6.47 18.75 2 18.16 2 17.46C2 16.74 6.81 16.13 13.2 15.99L12.51 18.92ZM13.46 14.91C7.44 14.75 3 14.16 3 13.46C3 12.74 7.78 12.14 14.15 12L13.46 14.91ZM14.41 10.91C8.42 10.74 4 10.16 4 9.46C4 8.74 8.76 8.14 15.1 8L14.41 10.91ZM15.35 6.91C9.39 6.74 5 6.16 5 5.46C5 4.75 9.73 4.14 16.04 4L15.35 6.91ZM16.3 2.91C10.36 2.74 6 2.16 6 1.46C6 0.75 10.71 0.15 16.99 0L16.3 2.91Z"></path>
-      </svg>
+    <a class="active logo-link" href="#top" aria-label="Andres Alvarez — home">
+      <span class="logo-mark" aria-hidden="true">AA</span>
     </a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
     <a href="#education">Education</a>
   </div>
   <div class="header-right">
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme" title="Toggle light / dark mode">
+      <span class="theme-toggle-track">
+        <span class="theme-toggle-icons" aria-hidden="true">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </span>
+        <span class="theme-toggle-thumb"></span>
+      </span>
+    </button>
     <a href="#contact">Connect</a>
-    <a class="contact-button" href="mailto:andres.line@icloud.com">Contact Me</a>
+    <a class="contact-button" href="mailto:hello@iamandres.com">Email</a>
   </div>
 </header>
 
 <!-- HERO -->
 <div class="hero" id="top">
-  <div class="hero-top-1">Miami, FL &nbsp;|&nbsp; Open to NYC</div>
+  <div class="hero-top-1">Miami Beach</div>
   <div class="hero-top-2">////////////</div>
 
   <div class="hero-flex-1">
     <div class="profile-photo-wrap">
-      <div class="initials">AA</div>
+      <img class="profile-photo profile-photo--dark" src="profile-dark.png" alt="Andres Alvarez" width="280" height="280" decoding="async">
+      <img class="profile-photo profile-photo--light" src="profile-light.png" alt="" width="280" height="280" decoding="async" aria-hidden="true">
     </div>
   </div>
 
@@ -44,17 +73,17 @@
       <div>Andres</div>
       <div><span class="highlight-word">Alvarez</span></div>
     </h1>
-    <p class="description">AI Implementation Consultant &amp; Builder. The closest way to describe what I am doing right now is entrepreneurship: actively building production startups leveraging AI. I build products, train teams, and ship full-stack solutions fast.</p>
+    <p class="description">Builder at the intersection of AI, product, and systems. I ship production software, build trading and fintech tools — including bots for crypto and prediction markets — and have a long background in music and live production. Bilingual in English and Spanish.</p>
     <div>
-      <a href="mailto:andres.line@icloud.com" class="hero-button">
+      <a href="mailto:hello@iamandres.com" class="hero-button">
         <div class="hero-button-text">
-          <span>Get In Touch</span>
+          <span>Say Hello</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
         </div>
       </a>
     </div>
     <div class="banner">
-      <div class="banner-scroll">| AI Engineering | Prompt Engineering | Full-Stack Deployment | Team Training | Algorithmic Trading | Bilingual EN/ES | Claude Code | Cursor | AWS | Cloudflare | AI Engineering | Prompt Engineering | Full-Stack Deployment | Team Training | Algorithmic Trading | Bilingual EN/ES | Claude Code | Cursor | AWS | Cloudflare&nbsp;</div>
+      <div class="banner-scroll">| AI Engineering | Prompt Engineering | Full-Stack Deployment | Algorithmic Trading | Prediction Markets | Custom Automation | Bilingual EN/ES | Claude Code | Cursor | AWS | Cloudflare | AI Engineering | Prompt Engineering | Full-Stack Deployment | Algorithmic Trading | Prediction Markets | Custom Automation | Bilingual EN/ES | Claude Code | Cursor | AWS | Cloudflare&nbsp;</div>
     </div>
     <div class="metadata">[ AI-Native Builder ]</div>
     <div class="globe-icon">
@@ -69,44 +98,40 @@
 <!-- PITCH -->
 <div class="pitch">
   <div class="pitch-content">
-    <span class="word">I&nbsp;</span><span class="word">build&nbsp;</span><span class="word">production&nbsp;</span><span class="word">AI&nbsp;</span><span class="word">products,&nbsp;</span><span class="word">train&nbsp;</span><span class="word">teams,&nbsp;</span><span class="word">and&nbsp;</span><span class="word">ship&nbsp;</span><span class="word">fast&nbsp;</span><span class="word">↓</span>
+    <span class="word">I&nbsp;</span><span class="word">build&nbsp;</span><span class="word">production&nbsp;</span><span class="word">AI&nbsp;</span><span class="word">products&nbsp;</span><span class="word">and&nbsp;</span><span class="word">ship&nbsp;</span><span class="word">fast&nbsp;</span><span class="word">↓</span>
   </div>
 </div>
 
 <!-- EXPERIENCE CARDS -->
 <div class="card-stack-section" id="experience">
 
-  <!-- Card 1: AI Consultant -->
+  <!-- Card 1: AI & Product -->
   <div class="card-item fade-in-up">
     <div class="section-content">
       <div class="flex-content">
-        <h3>AI Implementation Consultant</h3>
-        <p>Independent &nbsp;|&nbsp; Miami, FL &nbsp;|&nbsp; <span>2023 - Present</span></p>
-        <p>Embedded with clients to build <span>AI-powered tools</span>, train teams, and define workflows. Vibe codes to working prototypes using Claude Code, Cursor, and Codex, then iterates toward <span>shippable products</span>.</p>
-        <ul style="color: #ccc; font-size: 14px; line-height: 1.8; margin-left: 20px; margin-bottom: 24px; padding-right: 16px;">
-          <li>Trains non-technical teams and individuals on AI tools including ChatGPT, Claude, Gemini, and Grok.</li>
-          <li>Teaches prompt engineering, model selection, and token optimization.</li>
-          <li>Contributes to AI product thinking and feature discovery.</li>
-          <li>Builds and deploys to AWS, Cloudflare, and GitHub; manages servers, API keys, and OpenRouter model routing.</li>
-          <li>Portfolio of production projects built independently using AI-assisted development, including Custom Content Automation Software and Financial Technology integrations.</li>
-          <li>Hands-on experience deploying custom AI agents including OpenClaw and Hermes.</li>
-          <li>Comfortable navigating crypto, fintech, and emerging technology ecosystems.</li>
+        <h3>AI &amp; Product Development</h3>
+        <p>Independent &nbsp;|&nbsp; <span>2023 – Present</span></p>
+        <p>Designs and builds <span>AI-powered products</span> end to end — from prototypes with Claude Code, Cursor, and Codex through deployment on AWS, Cloudflare, and GitHub.</p>
+        <ul style="color: var(--text-body); font-size: 14px; line-height: 1.8; margin-left: 20px; margin-bottom: 24px; padding-right: 16px;">
+          <li>Builds custom automation, agents, and integrations (including OpenClaw and Hermes).</li>
+          <li>Works on prompt design, model selection, and token-efficient workflows.</li>
+          <li>Ships production projects across content automation, fintech, and emerging tech.</li>
+          <li>Runs infrastructure: servers, APIs, OpenRouter routing, and deployment pipelines.</li>
         </ul>
         <div class="feature-list">
           <div class="tag">AI Workflow Design</div>
-          <div class="tag">Team Training</div>
           <div class="tag">Prompt Engineering</div>
           <div class="tag">Token Optimization</div>
           <div class="tag">Model Selection</div>
-          <div class="tag">Use Case Discovery</div>
-          <div class="tag">Client Communication</div>
           <div class="tag">Full-Stack Deployment</div>
+          <div class="tag">Custom Agents</div>
+          <div class="tag">API Integration</div>
         </div>
         <div class="card-footer">
-          <div class="footer-tag">[ AI Consultant ]</div>
+          <div class="footer-tag">[ AI &amp; Product ]</div>
           <div class="metadata-icons">
             <div class="footer-tag">[ Present ]</div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2"></path><path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2"></path><circle cx="12" cy="12" r="1"></circle><path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2"></path><path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2"></path><circle cx="12" cy="12" r="1"></circle><path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0"></path></svg>
           </div>
         </div>
       </div>
@@ -128,15 +153,18 @@
     <div class="section-content">
       <div class="flex-content">
         <h3>Algorithmic Trading Developer</h3>
-        <p>Independent &nbsp;|&nbsp; Miami, FL &nbsp;|&nbsp; <span>2019 - Present</span></p>
-        <p>Designed and built a <span>proprietary trading platform</span> following training in blockchain technology and quantitative finance. Built a "Proof of Performance" system using <span>Hyperliquid Vaults</span> for real-time, on-chain verification of trading results.</p>
-        <ul style="color: #ccc; font-size: 14px; line-height: 1.8; margin-left: 20px; margin-bottom: 24px;">
+        <p>Independent &nbsp;|&nbsp; <span>2019 – Present</span></p>
+        <p>Designed and built a <span>proprietary trading platform</span> grounded in blockchain and quantitative finance coursework. Also develops <span>trading bots for prediction markets</span> — automated strategies, execution logic, and API integrations for event-driven markets. Built a "Proof of Performance" system using <span>Hyperliquid Vaults</span> for real-time, on-chain verification of trading results.</p>
+        <ul style="color: var(--text-body); font-size: 14px; line-height: 1.8; margin-left: 20px; margin-bottom: 24px;">
           <li>Applied programming, data analysis, and systems thinking to create automated trading strategies.</li>
+          <li>Builds custom bots for prediction markets: signal logic, order execution, risk rules, and market connectivity.</li>
           <li>Managed the full development lifecycle of the algorithmic trading system.</li>
           <li>"Proof of Performance" system built for Cryptobots: public Hyperliquid Vault where every trade is recorded on blockchain (verifiable at cryptobots.io/proof-of-performance).</li>
         </ul>
         <div class="feature-list">
           <div class="tag">Quantitative Finance</div>
+          <div class="tag">Prediction Markets</div>
+          <div class="tag">Trading Bots</div>
           <div class="tag">Blockchain</div>
           <div class="tag">Data Analysis</div>
           <div class="tag">Systems Architecture</div>
@@ -153,10 +181,12 @@
       <div class="flex-content art-side">
         <div class="stripes-bg"></div>
         <div style="text-align:center;z-index:1;">
-          <div style="font-size:48px;font-weight:700;color:#fff;letter-spacing:-0.04em;">6+</div>
-          <div style="color:var(--logo);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">Years Trading</div>
-          <div style="margin-top:32px;font-size:48px;font-weight:700;color:#fff;letter-spacing:-0.04em;">100%</div>
-          <div style="color:var(--logo);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">On-Chain Transparent</div>
+          <div style="font-size:48px;font-weight:700;color:var(--text-primary);letter-spacing:-0.04em;">7+</div>
+          <div style="color:var(--accent);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">Years Trading</div>
+          <div style="margin-top:24px;font-size:28px;font-weight:700;color:var(--text-primary);letter-spacing:-0.04em;line-height:1.2;">Pred<br>Markets</div>
+          <div style="color:var(--accent);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">Trading Bots</div>
+          <div style="margin-top:24px;font-size:48px;font-weight:700;color:var(--text-primary);letter-spacing:-0.04em;">100%</div>
+          <div style="color:var(--accent);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">On-Chain Transparent</div>
         </div>
       </div>
     </div>
@@ -167,9 +197,9 @@
     <div class="section-content">
       <div class="flex-content">
         <h3>DJ &amp; Music Producer</h3>
-        <p>Independent &nbsp;|&nbsp; Miami / International &nbsp;|&nbsp; <span>2000 - 2024</span></p>
-        <p>Professional DJ and electronic music producer for <span>two decades</span>, performing at venues and events across Miami and internationally. Produced, recorded, and released original music. Deep expertise in <span>audio production</span>, sound design, and live performance technology.</p>
-        <ul style="color: #ccc; font-size: 14px; line-height: 1.8; margin-left: 20px; margin-bottom: 24px;">
+        <p>Independent &nbsp;|&nbsp; <span>2000 – 2024</span></p>
+        <p>Professional DJ and electronic music producer for <span>two decades</span>, performing at venues and events locally and internationally. Produced, recorded, and released original music. Deep expertise in <span>audio production</span>, sound design, and live performance technology.</p>
+        <ul style="color: var(--text-body); font-size: 14px; line-height: 1.8; margin-left: 20px; margin-bottom: 24px;">
           <li>Produced, recorded, and released original electronic music globally.</li>
           <li>Developed deep expertise in audio production software, sound engineering, and creative direction.</li>
           <li>Successfully built and managed a personal brand in the highly competitive international music industry.</li>
@@ -192,10 +222,10 @@
       <div class="flex-content art-side">
         <div class="dot-grid"></div>
         <div style="text-align:center;z-index:1;">
-          <div style="font-size:48px;font-weight:700;color:#fff;letter-spacing:-0.04em;">24</div>
-          <div style="color:var(--logo);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">Years of Performance</div>
-          <div style="margin-top:32px;font-size:36px;font-weight:700;color:#fff;letter-spacing:-0.04em;">🌎</div>
-          <div style="color:var(--logo);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">International Reach</div>
+          <div style="font-size:48px;font-weight:700;color:var(--text-primary);letter-spacing:-0.04em;">24</div>
+          <div style="color:var(--accent);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">Years of Performance</div>
+          <div style="margin-top:32px;font-size:36px;font-weight:700;color:var(--text-primary);letter-spacing:-0.04em;">🌎</div>
+          <div style="color:var(--accent);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">International Reach</div>
         </div>
       </div>
     </div>
@@ -218,7 +248,7 @@
         <h3>Content Automation System</h3>
         <p>Built for <span>Cryptobots</span></p>
         <p>A completely custom content generation system built without templates, plugins, or standard CMS frameworks like WordPress. Designed to solve the need for consistent, on-brand content.</p>
-        <ul style="color: #ccc; font-size: 14px; line-height: 1.8; margin-left: 20px; margin-bottom: 24px; padding-right: 16px;">
+        <ul style="color: var(--text-body); font-size: 14px; line-height: 1.8; margin-left: 20px; margin-bottom: 24px; padding-right: 16px;">
           <li>Takes defined writing and art directions as inputs.</li>
           <li>Automatically generates posts and cover images that stay true to the brand voice and visual style.</li>
           <li>Publishes directly to the Cryptobots blog via APIs.</li>
@@ -230,15 +260,15 @@
           <div class="tag">Custom Automation</div>
         </div>
         <div class="card-footer" style="margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-color);">
-          <a href="https://drive.google.com/file/d/1c99X8qyQW50ExHld6t_EJ39RY5V56RCi/view?usp=sharing" target="_blank" style="color: var(--logo); text-transform: uppercase; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">[ Watch Demo Video ] <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+          <a href="https://drive.google.com/file/d/1c99X8qyQW50ExHld6t_EJ39RY5V56RCi/view?usp=sharing" target="_blank" style="color: var(--accent); text-transform: uppercase; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">[ Watch Demo Video ] <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
         </div>
       </div>
       <div class="flex-content art-side">
         <div class="stripes-bg"></div>
         <div class="crop-marks"><div class="crop"></div><div class="crop"></div><div class="crop"></div><div class="crop"></div></div>
         <div style="text-align:center;z-index:1;padding: 40px;">
-          <div style="font-size:36px;font-weight:700;color:#fff;letter-spacing:-0.04em;">Zero</div>
-          <div style="color:var(--logo);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">Manual Publishing</div>
+          <div style="font-size:36px;font-weight:700;color:var(--text-primary);letter-spacing:-0.04em;">Zero</div>
+          <div style="color:var(--accent);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">Manual Publishing</div>
         </div>
       </div>
     </div>
@@ -251,7 +281,7 @@
         <h3>Proof of Performance</h3>
         <p>Built for <span>Cryptobots</span></p>
         <p>In the automated trading space, trust is the single biggest barrier. I built a system that eliminates the need for trust entirely by recording every trade, result, and return on the blockchain in real time.</p>
-        <ul style="color: #ccc; font-size: 14px; line-height: 1.8; margin-left: 20px; margin-bottom: 24px;">
+        <ul style="color: var(--text-body); font-size: 14px; line-height: 1.8; margin-left: 20px; margin-bottom: 24px;">
           <li>Adapted the main trading algorithm to manage a public Hyperliquid Vault.</li>
           <li>Ensures potential users can verify actual performance before connecting their exchange or investing.</li>
           <li>Zero marketing hype, no hidden numbers, impossible to manipulate.</li>
@@ -262,16 +292,16 @@
           <div class="tag">FinTech Trust</div>
         </div>
         <div class="card-footer" style="margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-color); flex-direction: column; align-items: flex-start; gap: 12px;">
-          <a href="https://cryptobots.io/proof-of-performance" target="_blank" style="color: var(--logo); text-transform: uppercase; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">[ View Live Performance ] <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
-          <a href="https://app.hyperliquid-testnet.xyz/vaults/0x627af54e152094e32cd1ba01dc5c00daf2da44ea" target="_blank" style="color: #888; text-transform: uppercase; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">[ View Hyperliquid Vault ] <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+          <a href="https://cryptobots.io/proof-of-performance" target="_blank" style="color: var(--accent); text-transform: uppercase; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">[ View Live Performance ] <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+          <a href="https://app.hyperliquid-testnet.xyz/vaults/0x627af54e152094e32cd1ba01dc5c00daf2da44ea" target="_blank" style="color: var(--text-muted); text-transform: uppercase; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">[ View Hyperliquid Vault ] <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
         </div>
       </div>
       <div class="flex-content art-side">
         <div class="dot-grid"></div>
         <div class="crop-marks"><div class="crop"></div><div class="crop"></div><div class="crop"></div><div class="crop"></div></div>
         <div style="text-align:center;z-index:1;padding: 40px;">
-          <div style="font-size:36px;font-weight:700;color:#fff;letter-spacing:-0.04em;">100%</div>
-          <div style="color:var(--logo);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">On-Chain Verifiable</div>
+          <div style="font-size:36px;font-weight:700;color:var(--text-primary);letter-spacing:-0.04em;">100%</div>
+          <div style="color:var(--accent);text-transform:uppercase;font-size:12px;font-weight:600;margin-top:8px;">On-Chain Verifiable</div>
         </div>
       </div>
     </div>
@@ -313,11 +343,11 @@
         </div>
         <div class="skill-card">
           <div class="skill-title">Finance &amp; Crypto</div>
-          <div class="skill-items">Algorithmic trading · Blockchain<br>Fintech ecosystems</div>
+          <div class="skill-items">Algorithmic trading · Prediction market bots<br>Blockchain · Fintech ecosystems</div>
         </div>
         <div class="skill-card">
-          <div class="skill-title">Consulting</div>
-          <div class="skill-items">Client communication · Team training<br>Use case discovery<br>Multi-industry adaptability</div>
+          <div class="skill-title">Product</div>
+          <div class="skill-items">Use case discovery · Technical writing<br>Cross-domain builds · API design</div>
         </div>
         <div class="skill-card">
           <div class="skill-title">Languages</div>
@@ -350,17 +380,9 @@
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-date">2008</div>
-        <div class="timeline-content">
-          <h4>Music Production Diploma</h4>
-          <div class="org">SAE Institute Miami &nbsp;|&nbsp; Miami, FL</div>
-          <p>Professional audio engineering, music production, studio recording, and sound design.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
         <div class="timeline-date">2004</div>
         <div class="timeline-content">
-          <h4>Business Management (4 semesters)</h4>
+          <h4>Business Management</h4>
           <div class="org">Universidad de Bogota Jorge Tadeo Lozano &nbsp;|&nbsp; Bogota, Colombia</div>
         </div>
       </div>
@@ -368,7 +390,7 @@
         <div class="timeline-date">2003</div>
         <div class="timeline-content">
           <h4>High School Diploma</h4>
-          <div class="org">Colegio Retos &nbsp;|&nbsp; Bogota, Colombia</div>
+          <div class="org">Retos &amp; Retos &nbsp;|&nbsp; Bogota, Colombia</div>
         </div>
       </div>
     </div>
@@ -377,15 +399,15 @@
 
 <!-- CONTACT -->
 <div class="contact-section" id="contact">
-  <h3 style="font-family:var(--font);text-transform:uppercase;font-size:clamp(28px,4vw,48px);font-weight:700;color:#fff;letter-spacing:-0.04em;">Let's Connect</h3>
+  <h3 style="font-family:var(--font);text-transform:uppercase;font-size:clamp(28px,4vw,48px);font-weight:700;color:var(--text-primary);letter-spacing:-0.04em;">Contact</h3>
   <div class="contact-grid">
-    <a class="contact-item" href="mailto:andres.line@icloud.com">
+    <a class="contact-item" href="mailto:hello@iamandres.com">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-      <div><div class="contact-label">Email</div><div class="contact-value">andres.line@icloud.com</div></div>
+      <div><div class="contact-label">Email</div><div class="contact-value">hello@iamandres.com</div></div>
     </a>
-    <a class="contact-item" href="tel:3058511711">
+    <a class="contact-item" href="tel:+13057074780">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-      <div><div class="contact-label">Phone</div><div class="contact-value">(305) 851-1711</div></div>
+      <div><div class="contact-label">Phone</div><div class="contact-value">305 707 4780</div></div>
     </a>
     <a class="contact-item" href="https://github.com/time-factor" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
@@ -402,10 +424,10 @@
 <footer class="footer-section">
   <div class="footer-content">
     <div>
-      <svg width="29" height="27" viewBox="0 0 29 27" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-logo-icon">
-        <path d="M14 23.96C21.73 23.96 28 24.64 28 25.46C28 26.29 21.73 26.96 14 26.96C6.27 26.96 0 26.29 0 25.46C0 24.64 6.27 23.96 14 23.96ZM15 19.96C22.73 19.96 29 20.64 29 21.46C29 22.29 22.73 22.96 15 22.96C7.27 22.96 1 22.29 1 21.46C1 20.64 7.27 19.96 15 19.96ZM12.51 18.92C6.47 18.75 2 18.16 2 17.46C2 16.74 6.81 16.13 13.2 15.99L12.51 18.92ZM13.46 14.91C7.44 14.75 3 14.16 3 13.46C3 12.74 7.78 12.14 14.15 12L13.46 14.91ZM14.41 10.91C8.42 10.74 4 10.16 4 9.46C4 8.74 8.76 8.14 15.1 8L14.41 10.91ZM15.35 6.91C9.39 6.74 5 6.16 5 5.46C5 4.75 9.73 4.14 16.04 4L15.35 6.91ZM16.3 2.91C10.36 2.74 6 2.16 6 1.46C6 .75 10.71 .15 16.99 0L16.3 2.91Z"></path>
-      </svg>
-      <div class="tagline">AI Implementation Consultant &amp; Builder.</div>
+      <a href="#top" class="logo-link footer-logo-link" aria-label="Back to top">
+        <span class="logo-mark logo-mark--footer" aria-hidden="true">AA</span>
+      </a>
+      <div class="tagline">Builder · AI · Product · Systems</div>
       <div class="copyright"><span style="font-size:18px;">©</span> 2026 Andres Alvarez</div>
     </div>
     <div>
@@ -420,10 +442,10 @@
     <div>
       <div class="footer-header">/ Connect</div>
       <nav class="footer-links">
-        <a href="mailto:andres.line@icloud.com">Email</a>
+        <a href="mailto:hello@iamandres.com">Email</a>
         <a href="https://github.com/time-factor" target="_blank">GitHub</a>
         <a href="#">@andresline</a>
-        <a href="tel:3058511711">Phone</a>
+        <a href="tel:+13057074780">Phone</a>
       </nav>
     </div>
   </div>
@@ -432,6 +454,48 @@
 </div>
 
 <script>
+// Theme: auto day/night (7am–7pm light, 7pm–7am dark) — same as superdance.us
+(function () {
+  var root = document.documentElement;
+  var toggle = document.getElementById('theme-toggle');
+
+  function isNightTime() {
+    var hour = new Date().getHours();
+    return hour >= 19 || hour < 7;
+  }
+
+  function resolveTheme() {
+    var saved = localStorage.getItem('theme');
+    var manualOverride = localStorage.getItem('theme-manual');
+    if (manualOverride === 'true' && (saved === 'light' || saved === 'dark')) {
+      return saved;
+    }
+    return isNightTime() ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme, manual) {
+    root.classList.remove('light', 'dark');
+    root.classList.add(theme);
+    localStorage.setItem('theme', theme);
+    if (manual) localStorage.setItem('theme-manual', 'true');
+    if (toggle) toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+  }
+
+  applyTheme(resolveTheme(), false);
+
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      applyTheme(root.classList.contains('dark') ? 'light' : 'dark', true);
+    });
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible' && localStorage.getItem('theme-manual') !== 'true') {
+      applyTheme(resolveTheme(), false);
+    }
+  });
+})();
+
 // Scroll-triggered fade-in animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
